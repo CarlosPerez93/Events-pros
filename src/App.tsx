@@ -1,5 +1,10 @@
+import { Counter } from "./views/Counter";
 function App() {
-  return <div>Hi!</div>;
+  return (
+    <div>
+      <Counter />
+    </div>
+  );
 }
 
 export default App;
