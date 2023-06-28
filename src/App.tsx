@@ -1,14 +1,8 @@
-import { Login } from "./views/public/login/Login";
-
 import "./app.scss";
-import { Register } from "./views/public/register/Register";
+import { PublicRoutes } from "./routes/PublicRoutes";
 function App() {
-  return (
-    <div className="app">
-      <Login />
-      {/* <Register /> */}
-    </div>
-  );
+  const auth = null;
+  return <div className="app">{!auth ? <PublicRoutes /> : <h1>Hola</h1>}</div>;
 }
 
 export default App;
