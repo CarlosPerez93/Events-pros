@@ -1,8 +1,12 @@
-import { Counter } from "./views/Counter";
+import { Login } from "./views/public/login/Login";
+
+import "./app.scss";
+import { Register } from "./views/public/register/Register";
 function App() {
   return (
-    <div>
-      <Counter />
+    <div className="app">
+      <Login />
+      {/* <Register /> */}
     </div>
   );
 }

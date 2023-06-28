@@ -1,0 +1,111 @@
+.main {
+  width: 1000px;
+  height: 600px;
+  margin: auto;
+  border-radius: 50px;
+  background-color: #fafafa;
+  display: flex;
+  &__left-part {
+    width: 359px;
+    height: 600px;
+    margin: 0;
+    border-radius: 50px 0 0 50px;
+    background-color: #37daff83;
+  }
+  &__container {
+    width: 830px;
+    height: 500px;
+    margin: 50px 82px;
+    position: absolute;
+    box-shadow: 5px 5px 10px;
+    display: flex;
+  }
+
+  &__presentation {
+    width: 276px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__title {
+    font-size: 22px;
+    margin: 2px;
+  }
+  &__text {
+    width: 202px;
+    text-align: center;
+    margin: 2px;
+  }
+  h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 80px;
+  }
+  &__form {
+    width: 540px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+  }
+  &__input {
+    width: 388px;
+    height: 40px;
+  }
+  &__password {
+    display: flex;
+    width: 388px;
+    justify-content: space-between;
+  }
+  &__password-input {
+    border: solid;
+  }
+  &__btn {
+    width: 388px;
+    background-color: #37daff83;
+    color: black;
+    margin-top: 20px;
+  }
+
+  &__link {
+    text-align: end;
+    margin: 0;
+    color: black !important;
+  }
+  &__link-register {
+    text-align: center;
+    margin: 10px;
+    color: black !important;
+  }
+}
+
+:where(.css-dev-only-do-not-override-12upa3x).ant-btn-primary:not(
+    :disabled
+  ):hover {
+  color: #fff;
+  background-color: #37daffda;
+}
+
+a:where(.css-dev-only-do-not-override-12upa3x).ant-typography,
+:where(.css-dev-only-do-not-override-12upa3x).ant-typography a {
+  /* color: #1677ff; */
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+:where(.css-dev-only-do-not-override-12upa3x).ant-form-item {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.88);
+  font-size: 14px;
+  line-height: 1.5714285714285714;
+  list-style: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin-top: 24px;
+  vertical-align: top;
+}
