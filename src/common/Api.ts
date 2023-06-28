@@ -1,8 +1,9 @@
 import axios from "axios";
-import { propsApi } from "./api.tpye";
-const url = "http://localhost:4000/api/";
+import { Api } from "./api.tpye";
 
-const Api = async (props: propsApi) => {
+const url = "http://localhost:4000/api";
+
+const Api = async (props: Api) => {
   const { data, params, patch, token } = props;
   if (patch === "post") {
     return await axios.post(`${url}${params}`, data, { headers: token });
