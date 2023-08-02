@@ -1,13 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, Form, Input, Space } from "antd";
 import Icon from "@ant-design/icons/lib/components/Icon";
 
 import img from "../../../assets/company-icon.svg";
 import "./register.scss";
+import { registerProps } from "./register.types";
+import { useSignUp } from "../../../hooks/useAuth";
 
 export const Register = () => {
   const { Item } = Form;
   const { Password } = Input;
+  const navigate = useNavigate();
+
+  const onFinish = (values: registerProps) => {
+    useSignUp(values);
+    navigate("/login");
+  };
+
   return (
     <div className="main">
       <div className="main__left-part" />
@@ -21,11 +30,12 @@ export const Register = () => {
           </p>
         </div>
         <div className="main__form">
-          <Form layout="vertical">
+          <Form layout="vertical" onFinish={onFinish}>
             <h2>Register</h2>
 
             <Item
               label={"Email"}
+              name={"email"}
               rules={[
                 {
                   type: "email",
@@ -38,12 +48,14 @@ export const Register = () => {
             </Item>
             <Item
               label={"Username"}
+              name={"username"}
               rules={[{ required: true, message: "please enter username" }]}
             >
               <Input className="main__input" />
             </Item>
             <Space className="main__password">
               <Item
+                name={"password"}
                 label={"Password"}
                 className="main_password-item"
                 rules={[{ required: true, message: "please enter password" }]}
@@ -51,6 +63,7 @@ export const Register = () => {
                 <Password />
               </Item>
               <Item
+                name={"password-confirm"}
                 label={"Password-confirm"}
                 className="main_password-item"
                 rules={[
@@ -74,7 +87,7 @@ export const Register = () => {
                 flexDirection: "column",
               }}
             >
-              <Button type="primary" className="main__btn">
+              <Button htmlType="submit" type="primary" className="main__btn">
                 Register
               </Button>
               <Link className="main__link-login" to="/">

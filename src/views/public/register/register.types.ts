@@ -1,8 +1,9 @@
 import propTypes from "prop-types";
 
-export const LoginProps = {
+export const registerProps = {
+  email: propTypes.string.isRequired,
   username: propTypes.string.isRequired,
   password: propTypes.string.isRequired,
 };
 
-export type LoginProps = propTypes.InferProps<typeof LoginProps>;
+export type registerProps = propTypes.InferProps<typeof registerProps>;
